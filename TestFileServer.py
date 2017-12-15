@@ -114,8 +114,8 @@ def RetrFile(name, sock,path,addr,port):
 
 def Main():
 
-    path = 'D://grade_three//计算机网络//Labs//期末pj//test//test1//'
-    addr = '10.147.108.23'
+    path = ''               #modify！！
+    addr = ''               #modify！！
     port = 9999
     
     s = socket.socket()
@@ -135,13 +135,11 @@ def Main():
     s.close()
 
 
-# In[ ]:
 
 if __name__ == "__main__":
     Main()
 
 
-# In[ ]:
 
 
 
