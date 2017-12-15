@@ -92,16 +92,16 @@ def openfile():
         b5=Button(topFrame, text="跳页",command=jumppg)
         b5.grid(row=0,column=7,padx=5,sticky=W)
                        
-        f = open('C:\\Users\\LynL\\Desktop\\temp_' + file, 'wb')
+        f = open('' + file, 'wb')
         
         data = s.recv(1024)
         f.write(data)
         f.close()
         
-        with open('C:\\Users\\LynL\\Desktop\\temp_' + file,encoding='gb18030',errors='ignore') as f:
+        with open('' + file,encoding='gb18030',errors='ignore') as f:
             for each_line in f:
                 text.insert(INSERT,each_line) #text是一个文本框的实例，按行插 
-        os.remove('C:\\Users\\LynL\\Desktop\\temp_' + file)
+        os.remove('' + file)
         
         
     else:
@@ -149,16 +149,16 @@ def backpg():
         s.send(bytes(str(currentpg),encoding='utf-8'))
         myCombox.current(currentpg-1)
   
-        f = open('C:\\Users\\LynL\\Desktop\\temp_' + file, 'wb')
+        f = open('' + file, 'wb')
         
         data = s.recv(1024)
         f.write(data)
         f.close()
         
-        with open('C:\\Users\\LynL\\Desktop\\temp_' + file,encoding='gb18030',errors='ignore') as f:
+        with open('' + file,encoding='gb18030',errors='ignore') as f:
             for each_line in f:
                 text.insert(INSERT,each_line) #text是一个文本框的实例，按行插 
-        os.remove('C:\\Users\\LynL\\Desktop\\temp_' + file)
+        os.remove('' + file)
     else:
         pop_error('后退提示','当前文件丢失')
     s.close()
@@ -197,16 +197,16 @@ def nextpg():
         s.send(bytes(str(currentpg),encoding='utf-8'))
         myCombox.current(currentpg-1)
         
-        f = open('C:\\Users\\LynL\\Desktop\\temp_' + file, 'wb')
+        f = open('' + file, 'wb')
         
         data = s.recv(1024)
         f.write(data)
         f.close()
         
-        with open('C:\\Users\\LynL\\Desktop\\temp_' + file,encoding='gb18030',errors='ignore') as f:
+        with open('' + file,encoding='gb18030',errors='ignore') as f:
             for each_line in f:
                 text.insert(INSERT,each_line) #text是一个文本框的实例，按行插 
-        os.remove('C:\\Users\\LynL\\Desktop\\temp_' + file)
+        os.remove('' + file)
     else:
         pop_error('前进提示','当前文件丢失')
     s.close()
@@ -235,16 +235,16 @@ def jumppg():
         currentpg = int(jpnum)
         
         s.send(bytes(jpnum,encoding='utf-8'))
-        f = open('C:\\Users\\LynL\\Desktop\\temp_' + file, 'wb')
+        f = open('' + file, 'wb')
         
         data = s.recv(1024)
         f.write(data)
         f.close()
         
-        with open('C:\\Users\\LynL\\Desktop\\temp_' + file,encoding='gb18030',errors='ignore') as f:
+        with open('' + file,encoding='gb18030',errors='ignore') as f:
             for each_line in f:
                 text.insert(INSERT,each_line) #text是一个文本框的实例，按行插 
-        os.remove('C:\\Users\\LynL\\Desktop\\temp_' + file)
+        os.remove('' + file)
     else:
         pop_error('跳转提示','当前文件丢失')
     s.close()
@@ -298,7 +298,7 @@ def downfile():
 currentpg = 0
 file =""
 maxpg = 0
-addr = '10.147.108.23'
+addr = ''       #needs modifying!!
 port = 9999
     
 #创建主窗口
@@ -343,13 +343,6 @@ text.config(yscrollcommand=sc.set)
 
 mainloop()
 
-
-# In[ ]:
-
-
-
-
-# In[ ]:
 
 
 
